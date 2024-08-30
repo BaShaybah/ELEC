@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Elec35{% endblock %}
+
+{% block body %}
+	<div class="container d-block align-items-center justify-content-center px-2 py-5 " style="width:100vw;min-height:100vh;">
+		<div class="row mx-auto" style="width:95%;">
+			<div class="col-12 p-4 mx-auto bg-white rounded shadow-lg">
+				<img class="img img-fluid" src="/img/login.png" alt="no img">
+				<div class="h1 my-3 text-secondary">
+					Login
+				</div>
+				<form action="{{ url_for('auth.login') }}" method="POST" class="form-group my-3">
+					<div class="form-floating my-3">
+					<input name="email" type="email" class="form-control" placeholder="Email" required>
+					<label for="email" class="form-label text-secondary">Email</label>
+					</div>
+					<div class="form-floating my-3">
+					<input name="password" type="password" class="form-control" placeholder="Password" required>
+					<label for="password" class="form-label text-secondary">Password</label>
+					</div>
+					{% if error %}
+						<label for="pass" class="small" style="color:red">invalid Email or Password</label>
+					{% endif %}
+					<div class="container">
+						<div class="row bg-success rounded my-3">
+							<div class="col ">
+								<input type="submit" value="Login" class="btn btn-success col-12">
+							</div>
+						</div>
+					</div>
+					<label class="label text-secondary ">
+					Don't have an account? <a href="{{ url_for('auth.signUp') }}" class="small text-decoration-none text-success">Sign up</a>
+				</label>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}

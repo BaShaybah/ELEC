@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Elec35{% endblock %}
+
+{% block body %}
+	<div class="container d-block align-items-center justify-content-center px-2 py-5 " style="width:100vw;min-height:100vh;">
+		<div class="row mx-auto" style="width:95%;">
+			<div class="col-12 p-4 mx-auto bg-white rounded shadow-lg">
+				<div class="h1 my-1">
+					Create an account
+				</div>
+				<label class="label text-secondary mb-2">
+					Already have an account? <a href="{{ url_for('auth.login') }}" class="small text-decoration-none text-success">Login</a>
+				</label>
+				<form action="{{ url_for('auth.signUp') }}" method="POST" class="form-group my-3">
+					<div class="form-floating my-3">
+					<input name="name" type="text" class="form-control" placeholder="name" required>
+					<label for="name" class="form-label text-secondary">Name</label>
+					</div>
+					<div class="form-floating my-3">
+					<input name="uninum" type="number" class="form-control" placeholder="uninum" required>
+					<label for="number" class="form-label text-secondary">University Number</label>
+					</div>
+					<div class="form-floating my-3">
+					<input name="email" type="email" class="form-control" placeholder="Email" required>
+					<label for="email" class="form-label text-secondary">Email</label>
+					</div>
+					<div class="form-floating my-3">
+					<input name="password" type="password" class="form-control" placeholder="Password" required>
+					<label for="password" class="form-label text-secondary">Password</label>
+					</div>
+					{% if invalid %}
+						<label for="pass" class="small" style="color:red">do you have already an account?</label>
+					{% endif %}
+					<div class="checkbox mt-3">
+						<label for="check" class="small text-secondary">
+							<input type="checkbox" name="checkbox" id="checkbox" style="accent-color:green;">
+							I agree to the <a href="#" class="text-decoration-none text-success small">Terms&Condtions</a>
+						</label>
+					</div>
+					{% if notchecked %}
+						<label for="help" style="color:red" class="small ">
+							Don't forgot to check here
+						</label>
+					{% endif %}
+					<div class="container">
+						<div class="row bg-success rounded my-3">
+							<div class="col ">
+								<input type="submit" value="create account" class="btn btn-success col-12">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}

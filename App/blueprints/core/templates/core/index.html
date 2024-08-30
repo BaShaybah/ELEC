@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}Elec35{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row my-3">
+			<div class="col">
+				<div class="h3" style="color:#05A3EF">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="display-3 mt-3 text-secondary text-center" style="font-weight:400">
+					Welcome to ELEC
+				</div>
+				<div class="display-5 mb-3 text-secondary text-center">
+					Let's learn togather
+				</div>
+				<div class="mb-3 text-center" style="font-size:18px;color:rgba(0,0,0,0.3)">
+					Join us in our study journey <br>
+					Books Videos Audios
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col mx-auto">
+				<a href="{{ url_for('auth.signUp') }}" class="mx-auto text-center d-block mx-auto">
+					<div class="btn my-3 text-white shadow-sm mx-auto" style="background:#295058;font-weight:500;border-radius:3px">Get Started
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container my-3">
+		<div class="row">
+			<div class="col">
+				<div class="h4 text-secondary">
+					About ELEC
+				</div>
+				<div class="text-secondary" style="font-size:18px">
+					elec is for sharing and helping others
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div style="background:#295058">
+	<div class="container px-3 py-1" >
+		<div class="row my-1">
+			<div class="h6 mt-4 text-white">
+			MENU
+		</div>
+			<div class="col-6">
+				<a href="{{ url_for('auth.login') }}" class="text-decoration-none text-white" style="font-weight:300;line-height:30px">Login</a><br>
+				<a href="{{ url_for('core.about') }}" class="text-decoration-none text-white" style="font-weight:300;line-height:30px">About</a><br>
+				<a href="{{ url_for('core.about') }}" class="text-decoration-none text-white" style="font-weight:300;line-height:30px">Help</a>
+			</div>
+			<div class="col-6">
+				<a href="{{ url_for('auth.signUp') }}" class="text-decoration-none text-white" style="font-weight:300;line-height:30px">Signup</a><br>
+				<a href="{{ url_for('core.about') }}" class="text-decoration-none text-white" style="font-weight:300;line-height:30px">Terms</a><br>
+				<a href="{{ url_for('core.about') }}" class="text-decoration-none text-white" style="font-weight:300;line-height:30px">Support us</a>
+			</div>
+		</div>
+		<div class="h6 my-4 text-white">
+			CONTACT
+		</div>
+		
+		<div class="row">
+			<div class="col text-center">
+				<a href="#">
+					<span class="display-6 bi-facebook text-white"></span>
+				</a>
+			</div>
+			<div class="col text-center">
+				<a href="#">
+					<span class="display-6 bi-telegram text-white"></span>
+				</a>
+			</div>
+			<div class="col text-center">
+				<a href="#" >
+					<span class="display-6 bi-youtube text-white"></span>
+				</a>
+			</div>
+			<div class="col text-center">
+				<a href="#" >
+					<span class="display-6 bi-discord text-white"></span>
+				</a>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col h6 text-center my-3 text-white">
+				&copy;2024 All rights reserved
+			</div>
+		</div>
+	</div>
+	</div>		
+	
+{% endblock %}
